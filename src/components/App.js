@@ -1,11 +1,14 @@
 import React from 'react';
+import PostList from './posts/PostList';
 
 class App extends React.Component {
     
     render() { 
         return ( 
-            <div>
-                <h1>App Component</h1>
+            <div style={{marginTop:'20px'}}>
+                <div className="ui container">
+                    <PostList/>
+                </div>
             </div>
          );
     }
