@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
+import postReducers from '../redux/blog/reducers/postReducers';
+import userReducer from '../redux/blog/reducers/userReducer';
+
 
 const rootReducers = combineReducers({
-    blog: () => 'blog'
+    posts:postReducers,
+    users:userReducer
 });
 
 export default rootReducers;

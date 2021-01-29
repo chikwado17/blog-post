@@ -6,11 +6,11 @@ import rootReducers from '../rootReducers/rootReducers';
 
 export const configureStore = () => {
 
-    const middleware = [thunk];
+ 
     const store = createStore(
         rootReducers,
         composeWithDevTools(
-            applyMiddleware(...middleware),
+            applyMiddleware(thunk),
     ));
     
 
