@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import UserHeader from '../users/UserHeader';
 
-
 class PostListDetails extends Component {
-
     render() { 
         const { post } = this.props;
         return ( 
@@ -22,5 +20,4 @@ class PostListDetails extends Component {
          );
     }
 }
- 
 export default PostListDetails;

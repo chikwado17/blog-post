@@ -3,17 +3,13 @@ import { connect } from 'react-redux';
 import PostListDetails from './PostListDetails';
 import { fetchPosts } from '../../redux/blog/actions/postActions';
 
-
-
 const mapDispatchToProps = {
     fetchPosts
 }
 
-
 const mapStateToProps = (state) => ({
     posts: state.posts
 });
-
 
 class PostList extends React.Component {
 
@@ -25,7 +21,6 @@ class PostList extends React.Component {
         const { posts } = this.props;
         return ( 
             <div>
-               
                 {posts && posts.map((post) => (
                      <PostListDetails key={post.id} post={post} /> 
                 ))}

@@ -3,7 +3,12 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../redux/blog/actions/postActions';
 
 
-
+const mapDispatchToProps = {
+    fetchUser
+}
+const mapStateToProps = (state, ownProps) => ({
+    user: state.users.find(user => user.id === ownProps.userId)
+});
 class UserHeader extends React.Component {
 
     componentDidMount() {
@@ -15,19 +20,9 @@ class UserHeader extends React.Component {
         return ( 
             <div>
                 <p>{user && user.name}</p>
+                <p>{user && user.email} | {user && user.phone}</p>
             </div>
           );
     }
 }
- 
-
-const mapDispatchToProps = {
-    fetchUser
-}
-
-const mapStateToProps = (state, ownProps) => ({
-    user: state.users.find(user => user.id === ownProps.userId)
-});
-
-
 export default connect(mapStateToProps, mapDispatchToProps)(UserHeader); 
